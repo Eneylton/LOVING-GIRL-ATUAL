@@ -28,8 +28,8 @@ foreach ($produtos as $item) {
 
                       </td>
 
-                      <td> R$ ' . number_format($item->valor, "2", ",", ".") . '</td>
-                      <td> <button type="button" class="btn btn-dark"> R$ ' . number_format($subtotal, "2", ",", ".") . '</button></td>
+                      <td style="font-size:20px" > R$ ' . number_format($item->valor, "2", ",", ".") . '</td>
+                      <td style="font-size:20px" > <button type="button" class="btn btn-dark"> R$ ' . number_format($subtotal, "2", ",", ".") . '</button></td>
 
                       <td style="text-align: center;">
                         
