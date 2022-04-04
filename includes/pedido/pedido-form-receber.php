@@ -28,6 +28,7 @@ foreach ($produtos as $item) {
 
                       </td>
 
+                      <td style="font-size:20px" > R$ ' . number_format($item->compra, "2", ",", ".") . '</td>
                       <td style="font-size:20px" > R$ ' . number_format($item->valor, "2", ",", ".") . '</td>
                       <td style="font-size:20px" > <button type="button" class="btn btn-dark"> R$ ' . number_format($subtotal, "2", ",", ".") . '</button></td>
 
@@ -46,7 +47,7 @@ foreach ($produtos as $item) {
 }
 
 $resultados = strlen($resultados) ? $resultados : '<tr>
-                                                     <td colspan="8" class="text-center" > Nenhuma Produto Encontrado !!!!! </td>
+                                                     <td colspan="9" class="text-center" > Nenhuma Produto Encontrado !!!!! </td>
                                                      </tr>';
 
 unset($_GET['status']);
@@ -98,7 +99,7 @@ foreach ($paginas as $key => $pagina) {
                   <table id="example1" class="table table-dark table-hover table-striped">
                      <thead>
                         <tr>
-                           <td colspan="8">
+                           <td colspan="9">
                               <input type="submit" name="submit" value="Receber" onclick="return confirm('Receber todos os produtos!!!')" class="btn btn-primary">                      
   
                               <button type="submit" name="enviar" value="imprimir" class="btn btn-dark float-right"> <i class="fas fa-print"></i> &nbsp; &nbsp; IMPRIMIR RELATÓRIO</button>
@@ -122,7 +123,8 @@ foreach ($paginas as $key => $pagina) {
                            <th> FORNECEDOR </th>
                            <th> NOME </th>
                            <th> QTD </th>
-                           <th> VALOR UNITÁRO </th>
+                           <th> VALOR UNI COMPRA </th>
+                           <th> VALOR UNI VENDA </th>
                            <th> SUBTOTAL </th>
                            <th style="text-align:center;"> AÇÃO </th>
                         </tr>
@@ -132,7 +134,7 @@ foreach ($paginas as $key => $pagina) {
                      </tbody>
 
                      <tr>
-                        <td colspan="6" style="text-align: right; ">TOTAL</td>
+                        <td colspan="7" style="text-align: right; ">TOTAL</td>
 
                         <td colspan="2"> 
 

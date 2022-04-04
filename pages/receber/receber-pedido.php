@@ -1,9 +1,9 @@
 <?php
 require __DIR__ . '../../../vendor/autoload.php';
 
-use  \App\Db\Pagination;
-use   \App\Entidy\Compra;
-use     \App\Session\Login;
+use App\Db\Pagination;
+use App\Entidy\Compra;
+use App\Session\Login;
 
 define('TITLE', 'Receber Compras');
 define('BRAND', 'Compras');
@@ -45,6 +45,7 @@ c.barra as barra,
 f.nome as fornecedor,
 c.nome as nome,
 c.qtd as qtd,
+c.subtotal as compra,
 c.valor_compra as valor','compras AS c
 INNER JOIN
 fornecedor AS f ON (f.id = c.fornecedor_id)',$where . $and .' status = 1');

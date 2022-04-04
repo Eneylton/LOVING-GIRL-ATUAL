@@ -43,10 +43,12 @@ if(isset($_POST['submit'])){
         
         foreach ($_POST['id'] as $id) {
             $item   =  Compra::getReceberID('*','compras',$id,null,null);
-            $estoque = Produto::getID('*','produtos',$id,null,null);
-            $soma = $estoque->estoque + $item->qtd;
-            $estoque->estoque = $soma; 
-            $estoque->atualizar();
+            $prod = Produto::getID('*','produtos',$id,null,null);
+            $soma = $prod->estoque + $item->qtd;
+            $prod->estoque = $soma; 
+            $prod->valor_compra = $item->subtotal; 
+            $prod->valor_venda = $item->valor_compra; 
+            $prod->atualizar();
 
             $item->status = 0;
             $item->excluir();
